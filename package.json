@@ -1,0 +1,24 @@
+{
+  "name": "live-video",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "WebRTC",
+    "SocketIO"
+  ],
+  "author": "Jeremy Luzon",
+  "license": "",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.4.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "eslint": "7.0.0"
+  }
+}

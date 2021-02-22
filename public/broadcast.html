@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Broadcaster</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <style>
+      body {
+        background: #f1c40f;
+      }
+    </style>
+
+    <h1>ROOM ID : <span id="roomId"></span></h1>
+    <section class="select">
+      <label for="audioSource">Audio source: </label>
+      <select id="audioSource"></select>
+    </section>
+
+    <section class="select">
+      <label for="videoSource">Video source: </label>
+      <select id="videoSource"></select>
+    </section>
+
+    <video playsinline autoplay muted></video>
+
+    <div class="users-container" id="users-container">
+      <h4 id="num">All connected users :</h4>
+      <div id="users"></div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/broadcast.js"></script>
+  </body>
+</html>

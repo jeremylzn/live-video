@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <script>
+    function hashCode(str) {
+      var hash = 0,
+        i,
+        chr;
+      for (i = 0; i < str.length; i++) {
+        chr = str.charCodeAt(i);
+        hash = (hash << 5) - hash + chr;
+        hash |= 0; // Convert to 32bit integer
+      }
+      return hash;
+    }
+
+    function creationLive() {
+      var room = prompt("What is your room name");
+      window.location.replace(
+        window.location.origin + `/broadcast/${hashCode(room)}`
+      );
+    }
+
+    function joinLive() {
+      var room = prompt("Enter your room ID");
+      window.location.replace(window.location.origin + `/watch/${room}`);
+    }
+  </script>
+  <body>
+    <style>
+      body {
+        background: #f1c40f;
+      }
+      .button {
+        background: #3498db;
+        width: 180px;
+        padding: 4px 0;
+      }
+      .form-inline {
+        display: inline-block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        border-radius: 3px;
+      }
+      p {
+        font-family: "Roboto";
+        text-align: center;
+        text-transform: uppercase;
+        color: #fff;
+        user-select: none;
+      }
+      .button:hover {
+        cursor: pointer;
+      }
+    </style>
+
+    <form class="form-inline">
+      <div class="button" onclick="creationLive()">
+        <p>Create Live</p>
+      </div>
+      <br />
+      <div class="button" onclick="joinLive()">
+        <p>Join Room</p>
+      </div>
+    </form>
+
+    <script src="/socket.io/socket.io.js"></script>
+  </body>
+</html>
