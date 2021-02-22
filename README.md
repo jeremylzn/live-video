@@ -16,10 +16,10 @@ Start the application using Docker:
 
 ```bash
 # Building the image
-docker build --tag webrtcvideobroadcast .
+docker build --tag live-video .
 
 # Run the image in a container
-docker run -d -p 4000:4000 webrtcvideobroadcast
+docker run -d -p 4000:4000 live-video
 ```
 
 ## Author : Jeremy Luzon
